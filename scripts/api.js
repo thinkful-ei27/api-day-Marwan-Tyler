@@ -11,7 +11,6 @@ const api = (function() {
   const createItem = function(name, callback){
     const newItem = JSON.stringify({
       name,
-//    jkl
     });
     
     $.ajax({
@@ -24,11 +23,21 @@ const api = (function() {
 
   };
   
+  const updateItem = function(id, updateData, callback){
+    $.ajax({
+      url: `${BASE_URL}/items/${id}`,
+      method: 'PATCH',
+      contentType: 'application/json',
+      data: JSON.stringify(updateData),
+      success: callback
+    });
+  };
 
   return{
     BASE_URL,
     getItems,
-    createItem
+    createItem,
+    updateItem
   };
 
 }());
