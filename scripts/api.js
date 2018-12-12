@@ -11,7 +11,7 @@ const api = (function() {
   const createItem = function(name, callback){
     const newItem = JSON.stringify({
       name,
-   
+//    jkl
     });
     
     $.ajax({
